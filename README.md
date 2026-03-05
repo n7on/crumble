@@ -1,100 +1,63 @@
 # Crumble
 
-GDPR cookie compliance scanner for websites. Detects tracking cookies and third-party trackers that load **before** user consent.
+[![GDPR Compliance Scan](https://github.com/n7on/crumble/actions/workflows/gdpr-scan.yml/badge.svg)](https://github.com/n7on/crumble/actions/workflows/gdpr-scan.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PowerShell](https://img.shields.io/badge/PowerShell-7.0+-blue.svg)](https://github.com/PowerShell/PowerShell)
 
-## Features
+**Automated GDPR compliance scanner** that detects tracking cookies and third-party trackers loading before user consent.
 
-- Detects pre-consent tracking cookies (Google Analytics, Facebook, etc.)
-- Identifies known tracker domains contacted before consent
-- Generates HTML and PDF compliance reports
-- Automated weekly scans via GitHub Actions
+**[📊 View Reports](https://n7on.github.io/crumble/)**
+
+## The Problem
+
+Under GDPR and the ePrivacy Directive, websites must obtain user consent **before** setting tracking cookies or contacting advertising/analytics services. Many websites violate this by loading trackers immediately on page load, before any consent interaction.
+
+## What Crumble Does
+
+Crumble visits websites in a headless browser and:
+
+1. **Captures pre-consent state** — Records all cookies and network requests before clicking anything
+2. **Simulates consent** — Clicks the cookie consent banner
+3. **Analyzes violations** — Identifies tracking cookies and known tracker domains contacted before consent was given
+4. **Generates reports** — Produces detailed HTML and PDF compliance reports
+
+## Detected Trackers
+
+- **Analytics**: Google Analytics, Hotjar, Microsoft Clarity, Amplitude, Optimizely
+- **Advertising**: Google Ads, Facebook Pixel, LinkedIn Insight, Twitter Pixel
+- **Session Recording**: FullStory, LogRocket, Smartlook
+- **And more** — see the full list in `scripts/Test-GdprCompliance.ps1`
 
 ## Quick Start
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/n7on/crumble.git
-   cd crumble
-   ```
-
-2. **Install the Pup module**
-   ```powershell
-   Install-Module -Name Pup -Scope CurrentUser
-   Install-PupBrowser -BrowserType Chrome
-   ```
-
-3. **Create a scan file in `configs/`**
-   ```json
-   // configs/my-company.json
-   {
-     "Name": "My Company Sites",
-     "Description": "GDPR compliance scan for company websites",
-     "Sites": [
-       {
-         "Url": "https://example.com",
-         "ConsentSteps": ["Accept all cookies"]
-       },
-       {
-         "Url": "https://another-site.com",
-         "ConsentSteps": ["Accept"]
-       }
-     ]
-   }
-   ```
-
-4. **Run a scan**
-   ```powershell
-   ./scripts/Start-CrumbleScan.ps1 -ScanPath ./configs/my-company.json
-   
-   # With PDF output and limit to 10 sites
-   ./scripts/Start-CrumbleScan.ps1 -ScanPath ./configs/my-company.json -Pdf -Limit 10
-   ```
-
-## GitHub Actions
-
-The included workflow runs weekly and uploads reports as artifacts. To use it:
-
-1. Add your scan files to the `configs/` folder
-2. Enable GitHub Actions in your repo settings
-3. Manually trigger via **Actions** → **GDPR Cookie Compliance Scan** → **Run workflow**
-4. Select which scan file to use (defaults to `swedish-municipalities.json`)
-
-## Configuration
-
-### ConsentSteps
-
-The `ConsentSteps` array contains button text to click for accepting cookies. Common examples:
-
-- `"Accept all cookies"` / `"Accept all"`
-- `"Godkänn alla kakor"` (Swedish)
-- `"Akzeptieren"` (German)
-- `"Accepter"` (French)
-
-### Known Trackers
-
-The scanner detects requests to known tracking domains including Google Analytics, Facebook, HotJar, Microsoft Clarity, and more. See `scripts/Test-GdprCompliance.ps1` for the full list.
-
-## Example: Scraping Sites
-
 ```powershell
-# Scrape municipality URLs from a listing page
-$browser = Start-PupBrowser -Headless
-$page = $browser | New-PupPage -Url https://skr.se/kommunerochregioner/kommunerlista.8288.html 
-$sites = $page | Find-PupElements -Selector ".lp-link-list a" | ForEach-Object {
-    [PSCustomObject]@{
-        Url = ($_ | Get-PupElementAttribute -Name 'href')
-        ConsentSteps = @("Godkänn alla kakor")
-    }
-}
+# Install dependencies
+Install-Module -Name Pup -Scope CurrentUser
+Install-PupBrowser -BrowserType Chrome
 
-@{
-    Name = "Swedish Municipalities"
-    Description = "Official websites of all 290 Swedish municipalities"
-    Sites = $sites
-} | ConvertTo-Json -Depth 10 | Set-Content configs/swedish-municipalities.json
-
-$browser | Stop-PupBrowser
+# Run a scan
+./scripts/Start-CrumbleScan.ps1 -ScanPath ./configs/swedish-municipalities.json -Pdf
 ```
+
+## Reports
+
+Crumble generates professional compliance reports showing:
+
+- Overall compliance rate
+- Sites with pre-consent violations
+- Specific trackers and cookies detected
+- Detailed breakdown per site
+
+## Use Cases
+
+- **Public sector audits** — Scan government or municipal websites for compliance
+- **Agency compliance checks** — Verify client websites before launch
+- **Competitive analysis** — Benchmark compliance across an industry
+- **Continuous monitoring** — Automated weekly scans via GitHub Actions
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, configuration format, and how to add custom trackers.
 
 ## License
 

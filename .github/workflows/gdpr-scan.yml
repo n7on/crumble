@@ -1,4 +1,4 @@
-name: GDPR Cookie Compliance Scan
+name: GDPR Compliance Scan
 
 on:
   schedule:
@@ -6,19 +6,16 @@ on:
     - cron: '0 6 * * 1'
   workflow_dispatch:
     inputs:
-      scan_file:
-        description: 'Scan file to use (from configs/ folder)'
-        type: string
-        required: false
-        default: 'swedish-municipalities.json'
       site_limit:
-        description: 'Max number of sites to scan (0 = all)'
+        description: 'Max number of sites to scan per config (0 = all)'
         type: string
         required: false
         default: '0'
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   scan:
@@ -46,11 +43,10 @@ jobs:
           Import-Module Pup
           Install-PupBrowser -BrowserType Chrome
 
-      - name: Run GDPR scan and generate report
+      - name: Run GDPR scans for all configs
         id: scan
         shell: pwsh
         env:
-          SCAN_FILE: ${{ github.event.inputs.scan_file || 'swedish-municipalities.json' }}
           SITE_LIMIT: ${{ github.event.inputs.site_limit || '0' }}
         run: |
           $limitParam = @{}
@@ -58,13 +54,110 @@ jobs:
               $limitParam['Limit'] = [int]$env:SITE_LIMIT
           }
           
-          ./scripts/Start-CrumbleScan.ps1 -ScanPath "./configs/$env:SCAN_FILE" -OutputPath "./report.html" -Pdf @limitParam
+          # Create public directory
+          New-Item -ItemType Directory -Path ./public -Force
+          
+          # Scan each config file
+          $configs = Get-ChildItem -Path ./configs -Filter *.json
+          $reports = @()
+          
+          foreach ($config in $configs) {
+              $name = $config.BaseName
+              Write-Host "=== Scanning: $name ===" -ForegroundColor Cyan
+              
+              # Create output directory for this config
+              $outputDir = "./public/$name"
+              New-Item -ItemType Directory -Path $outputDir -Force
+              
+              # Run scan
+              ./scripts/Start-CrumbleScan.ps1 -ScanPath $config.FullName -OutputPath "$outputDir/index.html" -Pdf @limitParam
+              
+              # Load config for metadata
+              $scanConfig = Get-Content $config.FullName | ConvertFrom-Json
+              $reports += [PSCustomObject]@{
+                  Name = $scanConfig.Name
+                  Description = $scanConfig.Description
+                  Folder = $name
+                  SiteCount = $scanConfig.Sites.Count
+              }
+          }
+          
+          # Generate index page
+          $indexHtml = @"
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Crumble - GDPR Compliance Reports</title>
+              <style>
+                  * { margin: 0; padding: 0; box-sizing: border-box; }
+                  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1f2937; background: #f9fafb; padding: 2rem; }
+                  .container { max-width: 800px; margin: 0 auto; }
+                  h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+                  .subtitle { color: #6b7280; margin-bottom: 2rem; }
+                  .report-card { background: white; border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem; border: 1px solid #e5e7eb; }
+                  .report-card:hover { border-color: #2563eb; }
+                  .report-card h2 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+                  .report-card h2 a { color: #2563eb; text-decoration: none; }
+                  .report-card h2 a:hover { text-decoration: underline; }
+                  .report-card p { color: #6b7280; font-size: 0.9rem; }
+                  .report-card .meta { margin-top: 0.75rem; font-size: 0.85rem; color: #9ca3af; }
+                  .report-card .links { margin-top: 0.75rem; }
+                  .report-card .links a { color: #2563eb; text-decoration: none; margin-right: 1rem; font-size: 0.9rem; }
+                  footer { margin-top: 3rem; text-align: center; color: #9ca3af; font-size: 0.85rem; }
+                  footer a { color: #2563eb; text-decoration: none; }
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <h1>GDPR Compliance Reports</h1>
+                  <p class="subtitle">Automated pre-consent tracking analysis powered by <a href="https://github.com/n7on/crumble">Crumble</a></p>
+          "@
+          
+          foreach ($report in $reports) {
+              $indexHtml += @"
 
-      - name: Upload reports artifact
-        uses: actions/upload-artifact@v4
+                  <div class="report-card">
+                      <h2><a href="./$($report.Folder)/">$($report.Name)</a></h2>
+                      <p>$($report.Description)</p>
+                      <div class="meta">$($report.SiteCount) sites analyzed</div>
+                      <div class="links">
+                          <a href="./$($report.Folder)/">View Report</a>
+                          <a href="./$($report.Folder)/report.pdf">Download PDF</a>
+                      </div>
+                  </div>
+          "@
+          }
+          
+          $date = Get-Date -Format 'yyyy-MM-dd HH:mm'
+          $indexHtml += @"
+
+                  <footer>
+                      <p>Last updated: $date UTC</p>
+                      <p>Generated by <a href="https://github.com/n7on/crumble">Crumble</a></p>
+                  </footer>
+              </div>
+          </body>
+          </html>
+          "@
+          
+          $indexHtml | Out-File -Path ./public/index.html -Encoding utf8
+          Write-Host "Index page generated"
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: gdpr-compliance-report
-          path: |
-            report.json
-            report.pdf
-            report.html
+          path: ./public
+
+  deploy:
+    needs: scan
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

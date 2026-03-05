@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Generates a GDPR cookie compliance report from scan results.
+    Generates a GDPR compliance report from scan results.
 
 .DESCRIPTION
     Processes scan results JSON and generates an HTML report, optionally converting to PDF.

@@ -75,7 +75,9 @@ try {
     }
 
     # Save results JSON
-    $resultsPath = [System.IO.Path]::ChangeExtension($OutputPath, '.json')
+    $outputDir = Split-Path -Parent $OutputPath
+    if (-not $outputDir) { $outputDir = "." }
+    $resultsPath = Join-Path $outputDir "report.json"
     $results | ConvertTo-Json -Depth 10 | Out-File -Path $resultsPath
     Write-Host "Results saved to: $resultsPath"
 
@@ -85,7 +87,7 @@ try {
 
     # Generate PDF if requested
     if ($Pdf) {
-        $pdfPath = [System.IO.Path]::ChangeExtension($OutputPath, '.pdf')
+        $pdfPath = Join-Path $outputDir "report.pdf"
         & "$ScriptDir/New-CrumbleReport.ps1" -ResultsPath $resultsPath -OutputPath $pdfPath -ScanName $scan.Name -ScanDescription $scan.Description -Browser $browser
         Write-Host "PDF report: $pdfPath"
     }
