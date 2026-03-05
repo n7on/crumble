@@ -1,8 +1,4 @@
-# Crumble
-
-<p align="center">
-  <img src="templates/crumble.png" alt="Crumble" width="120">
-</p>
+<img src="templates/crumble.png" alt="Crumble" width="200">
 
 GDPR cookie compliance scanner for websites. Detects tracking cookies and third-party trackers that load **before** user consent.
 
