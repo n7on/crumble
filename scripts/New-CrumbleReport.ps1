@@ -276,7 +276,7 @@ if ($isPdf) {
     
     Write-Verbose "Generating PDF with Pup..."
     $page = $Browser | New-PupPage -Url "file://$tempHtml" -WaitForLoad
-    $page | Export-PupPdf -Path $OutputPath
+    $page | Export-PupPdf -FilePath $OutputPath
     $page | Remove-PupPage
     
     Remove-Item $tempHtml -ErrorAction SilentlyContinue
