@@ -34,6 +34,12 @@ jobs:
           Install-Module -Name Pup -Scope CurrentUser -Force
           Import-Module Pup
 
+      - name: Install Chrome for Pup
+        shell: pwsh
+        run: |
+          Import-Module Pup
+          Install-PupBrowser -Chrome
+
       - name: Run GDPR scan and generate report
         id: scan
         shell: pwsh
