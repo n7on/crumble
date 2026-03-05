@@ -22,17 +22,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Checkout wiki
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ github.repository }}.wiki
-          path: wiki
-          token: ${{ secrets.GITHUB_TOKEN }}
-        continue-on-error: true
-
-      - name: Create wiki directory if needed
-        run: mkdir -p wiki
-
       - name: Setup PowerShell
         shell: pwsh
         run: |
@@ -91,9 +80,6 @@ jobs:
           # Generate PDF report using Pup
           & ./scripts/New-CrumbleReport.ps1 -ResultsPath ./scan-results.json -OutputPath "./GDPR-Compliance-Report-$date.pdf" -Browser $browser
           
-          # Copy HTML to wiki
-          Copy-Item ./report.html ./wiki/GDPR-Compliance-Report.html
-          
           # Stop browser
           $browser | Stop-PupBrowser
 
@@ -105,24 +91,3 @@ jobs:
             scan-results.json
             GDPR-Compliance-Report-*.pdf
             report.html
-
-      - name: Publish to Wiki
-        run: |
-          cd wiki
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Initialize wiki repo if it doesn't exist
-          if [ ! -d ".git" ]; then
-            git init
-            git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.wiki.git
-          fi
-          
-          git add -A
-          if git diff --staged --quiet; then
-            echo "No changes to wiki"
-          else
-            git commit -m "Update GDPR scan report - $(date +'%Y-%m-%d')"
-            git push origin HEAD:master || git push origin HEAD:main
-          fi
-        continue-on-error: true
