@@ -70,7 +70,9 @@ $violatingSites = $results |
             TrackingCookies    = $_.TrackingCookiesBeforeConsent
             KnownTrackers      = $_.KnownTrackersBeforeConsent
             ThirdPartyRequests = $_.ThirdPartyRequestsBefore
-            TrackerViolations  = $_.PreConsentTrackerViolations | ForEach-Object { $_.KnownTracker }
+            TrackerViolations  = $_.PreConsentTrackerViolations | ForEach-Object { 
+                [PSCustomObject]@{ Tracker = $_.KnownTracker; Url = $_.Url }
+            }
             CookieViolations   = $_.PreConsentCookieViolations | ForEach-Object { 
                 [PSCustomObject]@{ Name = $_.Name; Category = $_.Category }
             }
@@ -169,7 +171,7 @@ if (-not $violatingSites -or $violatingSites.Count -eq 0) {
     foreach ($site in ($violatingSites | Select-Object -First 10)) {
         $trackersList = ""
         if ($site.TrackerViolations -and $site.TrackerViolations.Count -gt 0) {
-            $items = ($site.TrackerViolations | ForEach-Object { "<li>$_</li>" }) -join "`n"
+            $items = ($site.TrackerViolations | ForEach-Object { "<li><strong>$($_.Tracker)</strong><br><code>$($_.Url)</code></li>" }) -join "`n"
             $trackersList = "<p><strong>Trackers contacted before consent:</strong></p><ul>$items</ul>"
         }
         
