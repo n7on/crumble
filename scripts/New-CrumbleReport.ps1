@@ -29,6 +29,12 @@ param(
     [string]$OutputPath,
     
     [Parameter(Mandatory = $false)]
+    [string]$ScanName = "GDPR Compliance Scan",
+    
+    [Parameter(Mandatory = $false)]
+    [string]$ScanDescription = "",
+    
+    [Parameter(Mandatory = $false)]
     $Browser
 )
 
@@ -134,8 +140,20 @@ $topThirdPartyDomains = $results |
 Write-Verbose "Rendering HTML report..."
 $html = Get-Content -Path $TemplatePath -Raw
 
+# Embed logo as base64
+$logoPath = Join-Path $RootDir 'templates/crumble.png'
+if (Test-Path $logoPath) {
+    $logoBytes = [System.IO.File]::ReadAllBytes($logoPath)
+    $logoBase64 = "data:image/png;base64," + [Convert]::ToBase64String($logoBytes)
+    $html = $html -replace '{{LogoBase64}}', $logoBase64
+}
+
 $scanDate = Get-Date -Format 'yyyy-MM-dd'
 $scanTime = Get-Date -Format 'HH:mm:ss'
+
+# Metadata
+$html = $html -replace '{{ScanName}}', $ScanName
+$html = $html -replace '{{ScanDescription}}', $ScanDescription
 
 # Statistics
 $html = $html -replace '{{ScanDate}}', $scanDate

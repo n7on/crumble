@@ -45,6 +45,12 @@
             border-bottom: 2px solid var(--gray-200);
         }
 
+        header .logo {
+            max-width: 120px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
         header h1 {
             font-size: 2rem;
             color: var(--gray-800);
@@ -255,8 +261,9 @@
 <body>
 <div class="container">
     <header>
-        <h1>GDPR Cookie Compliance Report</h1>
-        <div class="subtitle">Automated Pre-Consent Tracking Analysis</div>
+        <img src="{{LogoBase64}}" alt="Crumble" class="logo">
+        <h1>{{ScanName}}</h1>
+        <div class="subtitle">{{ScanDescription}}</div>
         <div class="date">Generated: {{ScanDate}} {{ScanTime}} UTC</div>
     </header>
 

@@ -72,20 +72,21 @@ function Get-CookieCategory {
     param($Cookie)
     $name = $Cookie.Name.ToLower()
     
-    # Known tracking/analytics cookie patterns
-    $trackingPatterns = @('_ga', '_gid', '_gat', '_fbp', '_fbc', 'fr', '_hjid', '_hj', '_clck', '_clsk', 'mp_', 'amplitude', 'optimizely', 'ajs_')
-    $adPatterns = @('_gcl', 'IDE', 'test_cookie', 'NID', 'DSID', '_uetsid', 'li_fat_id', 'bcookie')
-    
-    foreach ($pattern in $trackingPatterns) {
-        if ($name -match [regex]::Escape($pattern)) { return 'Analytics/Tracking' }
-    }
-    foreach ($pattern in $adPatterns) {
-        if ($name -match [regex]::Escape($pattern)) { return 'Advertising' }
-    }
-    
-    # Session/functional patterns (usually OK)
+    # Check functional/session patterns FIRST (these are usually legitimate)
+    if ($name -match '^(jsessionid|phpsessid|asp\.net_sessionid|session_id|sessionid)$') { return 'Functional' }
     if ($name -match 'session|csrf|xsrf|token|auth') { return 'Functional' }
     if ($name -match 'consent|cookie.*accept|gdpr|cc_') { return 'Consent' }
+    
+    # Known tracking/analytics cookie patterns
+    $trackingPatterns = @('^_ga$', '^_gid$', '^_gat', '_fbp', '_fbc', '^fr$', '_hjid', '_hj', '_clck', '_clsk', '^mp_', 'amplitude', 'optimizely', '^ajs_')
+    $adPatterns = @('_gcl', '^IDE$', '^test_cookie$', '^NID$', '^DSID$', '_uetsid', 'li_fat_id', '^bcookie$')
+    
+    foreach ($pattern in $trackingPatterns) {
+        if ($name -match $pattern) { return 'Analytics/Tracking' }
+    }
+    foreach ($pattern in $adPatterns) {
+        if ($name -match $pattern) { return 'Advertising' }
+    }
     
     return 'Unknown'
 }
@@ -102,7 +103,15 @@ $Network = @{Before = ($Page | Get-PupNetwork); After = $null}
 # Detect and click consent banner
 foreach ($ConsentStep in $ConsentSteps) {
     Write-Verbose "Clicking consent step: $ConsentStep"
-    $Page | Find-PupElements -Text $ConsentStep | Invoke-PupElementClick
+    $ElementSteps = $Page | Find-PupElements -Text $ConsentStep -Visible
+    if ($ElementSteps.Count -eq 0) {
+        Write-Warning "Consent step '$ConsentStep' not found on the page!"
+    } elseif($ElementSteps.Count -gt 1) {
+        Write-Warning "Multiple elements found for consent step '$ConsentStep'. Clicking the first one."
+        $ElementSteps[0] | Invoke-PupElementClick
+    } else {
+        $ElementSteps | Invoke-PupElementClick
+    }
 }
 
 # Click around a bit to trigger more network requests and cookies

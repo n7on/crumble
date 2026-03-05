@@ -6,6 +6,10 @@ on:
     - cron: '0 6 * * 1'
   workflow_dispatch:
     inputs:
+      scan_file:
+        description: 'Scan file to use (from scans/ folder)'
+        required: false
+        default: 'swedish-municipalities.json'
       site_limit:
         description: 'Max number of sites to scan (0 = all)'
         required: false
@@ -44,18 +48,22 @@ jobs:
         id: scan
         shell: pwsh
         env:
+          SCAN_FILE: ${{ github.event.inputs.scan_file || 'swedish-municipalities.json' }}
           SITE_LIMIT: ${{ github.event.inputs.site_limit || '0' }}
         run: |
           Import-Module Pup
           
           $siteLimit = [int]$env:SITE_LIMIT
-          $sites = Get-Content -Path ./sites.json | ConvertFrom-Json
+          $scanPath = "./scans/$env:SCAN_FILE"
+          Write-Host "Loading scan from: $scanPath"
+          $scan = Get-Content -Path $scanPath | ConvertFrom-Json
+          $sites = $scan.Sites
           
           if ($siteLimit -gt 0) {
               $sites = $sites | Select-Object -First $siteLimit
           }
           
-          Write-Host "Scanning $($sites.Count) sites..."
+          Write-Host "Scanning '$($scan.Name)': $($sites.Count) sites..."
           
           # Start browser
           $browser = Start-PupBrowser -Headless
@@ -81,10 +89,10 @@ jobs:
           
           # Generate HTML report
           $date = Get-Date -Format 'yyyy-MM-dd'
-          & ./scripts/New-CrumbleReport.ps1 -ResultsPath ./scan-results.json -OutputPath "./report.html"
+          & ./scripts/New-CrumbleReport.ps1 -ResultsPath ./scan-results.json -OutputPath "./report.html" -ScanName $scan.Name -ScanDescription $scan.Description
           
           # Generate PDF report using Pup
-          & ./scripts/New-CrumbleReport.ps1 -ResultsPath ./scan-results.json -OutputPath "./GDPR-Compliance-Report-$date.pdf" -Browser $browser
+          & ./scripts/New-CrumbleReport.ps1 -ResultsPath ./scan-results.json -OutputPath "./GDPR-Compliance-Report-$date.pdf" -ScanName $scan.Name -ScanDescription $scan.Description -Browser $browser
           
           # Stop browser
           $browser | Stop-PupBrowser
