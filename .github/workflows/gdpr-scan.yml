@@ -7,11 +7,13 @@ on:
   workflow_dispatch:
     inputs:
       scan_file:
-        description: 'Scan file to use (from scans/ folder)'
+        description: 'Scan file to use (from configs/ folder)'
+        type: string
         required: false
         default: 'swedish-municipalities.json'
       site_limit:
         description: 'Max number of sites to scan (0 = all)'
+        type: string
         required: false
         default: '0'
 
@@ -51,57 +53,18 @@ jobs:
           SCAN_FILE: ${{ github.event.inputs.scan_file || 'swedish-municipalities.json' }}
           SITE_LIMIT: ${{ github.event.inputs.site_limit || '0' }}
         run: |
-          Import-Module Pup
-          
-          $siteLimit = [int]$env:SITE_LIMIT
-          $scanPath = "./scans/$env:SCAN_FILE"
-          Write-Host "Loading scan from: $scanPath"
-          $scan = Get-Content -Path $scanPath | ConvertFrom-Json
-          $sites = $scan.Sites
-          
-          if ($siteLimit -gt 0) {
-              $sites = $sites | Select-Object -First $siteLimit
+          $limitParam = @{}
+          if ([int]$env:SITE_LIMIT -gt 0) {
+              $limitParam['Limit'] = [int]$env:SITE_LIMIT
           }
           
-          Write-Host "Scanning '$($scan.Name)': $($sites.Count) sites..."
-          
-          # Start browser
-          $browser = Start-PupBrowser -Headless
-          
-          $results = @()
-          foreach ($site in $sites) {
-              Write-Host "Scanning: $($site.Url)"
-              try {
-                  $result = & ./scripts/Test-GdprCompliance.ps1 -Url $site.Url -Browser $browser -ConsentSteps $site.ConsentSteps -Verbose
-                  $results += $result
-              } catch {
-                  Write-Warning "Failed to scan $($site.Url): $_"
-                  $results += [PSCustomObject]@{
-                      Url = $site.Url
-                      Error = $_.Exception.Message
-                      TestedAt = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'
-                  }
-              }
-          }
-          
-          # Save results JSON
-          $results | ConvertTo-Json -Depth 10 | Out-File -Path ./scan-results.json
-          
-          # Generate HTML report
-          $date = Get-Date -Format 'yyyy-MM-dd'
-          & ./scripts/New-CrumbleReport.ps1 -ResultsPath ./scan-results.json -OutputPath "./report.html" -ScanName $scan.Name -ScanDescription $scan.Description
-          
-          # Generate PDF report using Pup
-          & ./scripts/New-CrumbleReport.ps1 -ResultsPath ./scan-results.json -OutputPath "./GDPR-Compliance-Report-$date.pdf" -ScanName $scan.Name -ScanDescription $scan.Description -Browser $browser
-          
-          # Stop browser
-          $browser | Stop-PupBrowser
+          ./scripts/Start-CrumbleScan.ps1 -ScanPath "./configs/$env:SCAN_FILE" -OutputPath "./report.html" -Pdf @limitParam
 
       - name: Upload reports artifact
         uses: actions/upload-artifact@v4
         with:
           name: gdpr-compliance-report
           path: |
-            scan-results.json
-            GDPR-Compliance-Report-*.pdf
+            report.json
+            report.pdf
             report.html

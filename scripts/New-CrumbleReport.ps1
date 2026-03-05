@@ -140,14 +140,6 @@ $topThirdPartyDomains = $results |
 Write-Verbose "Rendering HTML report..."
 $html = Get-Content -Path $TemplatePath -Raw
 
-# Embed logo as base64
-$logoPath = Join-Path $RootDir 'templates/crumble.png'
-if (Test-Path $logoPath) {
-    $logoBytes = [System.IO.File]::ReadAllBytes($logoPath)
-    $logoBase64 = "data:image/png;base64," + [Convert]::ToBase64String($logoBytes)
-    $html = $html -replace '{{LogoBase64}}', $logoBase64
-}
-
 $scanDate = Get-Date -Format 'yyyy-MM-dd'
 $scanTime = Get-Date -Format 'HH:mm:ss'
 
@@ -189,13 +181,21 @@ if (-not $violatingSites -or $violatingSites.Count -eq 0) {
     foreach ($site in ($violatingSites | Select-Object -First 10)) {
         $trackersList = ""
         if ($site.TrackerViolations -and $site.TrackerViolations.Count -gt 0) {
-            $items = ($site.TrackerViolations | ForEach-Object { "<li><strong>$($_.Tracker)</strong><br><code>$($_.Url)</code></li>" }) -join "`n"
+            $items = ($site.TrackerViolations | ForEach-Object { 
+                $tracker = if ($_.Tracker) { $_.Tracker } else { "-" }
+                $url = if ($_.Url) { $_.Url } else { "-" }
+                "<li><strong>$tracker</strong><br><code>$url</code></li>" 
+            }) -join "`n"
             $trackersList = "<p><strong>Trackers contacted before consent:</strong></p><ul>$items</ul>"
         }
         
         $cookiesList = ""
         if ($site.CookieViolations -and $site.CookieViolations.Count -gt 0) {
-            $items = ($site.CookieViolations | ForEach-Object { "<li><code>$($_.Name)</code> ($($_.Category))</li>" }) -join "`n"
+            $items = ($site.CookieViolations | ForEach-Object { 
+                $name = if ($_.Name) { $_.Name } else { "-" }
+                $category = if ($_.Category) { " ($($_.Category))" } else { "" }
+                "<li><code>$name</code>$category</li>" 
+            }) -join "`n"
             $cookiesList = "<p><strong>Tracking cookies set before consent:</strong></p><ul>$items</ul>"
         }
         

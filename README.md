@@ -1,4 +1,4 @@
-<img src="templates/crumble.png" alt="Crumble" width="200">
+# Crumble
 
 GDPR cookie compliance scanner for websites. Detects tracking cookies and third-party trackers that load **before** user consent.
 
@@ -23,9 +23,9 @@ GDPR cookie compliance scanner for websites. Detects tracking cookies and third-
    Install-PupBrowser -BrowserType Chrome
    ```
 
-3. **Create a scan file in `scans/`**
+3. **Create a scan file in `configs/`**
    ```json
-   // scans/my-company.json
+   // configs/my-company.json
    {
      "Name": "My Company Sites",
      "Description": "GDPR compliance scan for company websites",
@@ -44,25 +44,17 @@ GDPR cookie compliance scanner for websites. Detects tracking cookies and third-
 
 4. **Run a scan**
    ```powershell
-   Import-Module Pup
-   $browser = Start-PupBrowser -Headless
+   ./scripts/Start-CrumbleScan.ps1 -ScanPath ./configs/my-company.json
    
-   $scan = Get-Content ./scans/my-company.json | ConvertFrom-Json
-   $results = foreach ($site in $scan.Sites) {
-       ./scripts/Test-GdprCompliance.ps1 -Url $site.Url -Browser $browser -ConsentSteps $site.ConsentSteps
-   }
-   
-   $results | ConvertTo-Json -Depth 10 | Set-Content ./scan-results.json
-   ./scripts/New-CrumbleReport.ps1 -ResultsPath ./scan-results.json -OutputPath ./report.html -ScanName $scan.Name -ScanDescription $scan.Description
-   
-   $browser | Stop-PupBrowser
+   # With PDF output and limit to 10 sites
+   ./scripts/Start-CrumbleScan.ps1 -ScanPath ./configs/my-company.json -Pdf -Limit 10
    ```
 
 ## GitHub Actions
 
 The included workflow runs weekly and uploads reports as artifacts. To use it:
 
-1. Add your scan files to the `scans/` folder
+1. Add your scan files to the `configs/` folder
 2. Enable GitHub Actions in your repo settings
 3. Manually trigger via **Actions** → **GDPR Cookie Compliance Scan** → **Run workflow**
 4. Select which scan file to use (defaults to `swedish-municipalities.json`)
@@ -99,7 +91,7 @@ $sites = $page | Find-PupElements -Selector ".lp-link-list a" | ForEach-Object {
     Name = "Swedish Municipalities"
     Description = "Official websites of all 290 Swedish municipalities"
     Sites = $sites
-} | ConvertTo-Json -Depth 10 | Set-Content scans/swedish-municipalities.json
+} | ConvertTo-Json -Depth 10 | Set-Content configs/swedish-municipalities.json
 
 $browser | Stop-PupBrowser
 ```
