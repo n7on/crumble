@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDPR Cookie Compliance Report</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --success: #16a34a;
+            --warning: #ea580c;
+            --danger: #dc2626;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-600: #4b5563;
+            --gray-800: #1f2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background: white;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--gray-200);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: var(--gray-800);
+            margin-bottom: 0.5rem;
+        }
+
+        header .subtitle {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+        }
+
+        header .date {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--gray-50);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+        }
+
+        .stat-card.highlight {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .stat-card.success {
+            background: var(--success);
+            color: white;
+            border-color: var(--success);
+        }
+
+        .stat-card.warning {
+            background: var(--warning);
+            color: white;
+            border-color: var(--warning);
+        }
+
+        .stat-card .value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .stat-card .label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--gray-800);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        th {
+            background: var(--gray-100);
+            font-weight: 600;
+            color: var(--gray-600);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        tr:hover {
+            background: var(--gray-50);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .badge-danger {
+            background: #fef2f2;
+            color: var(--danger);
+        }
+
+        .badge-success {
+            background: #f0fdf4;
+            color: var(--success);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            background: var(--gray-50);
+            border-radius: 8px;
+            color: var(--gray-600);
+        }
+
+        .empty-state .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .violation-detail {
+            background: var(--gray-50);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .violation-detail h4 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--gray-800);
+        }
+
+        .violation-detail ul {
+            margin: 0.5rem 0 0 1.5rem;
+            color: var(--gray-600);
+        }
+
+        .violation-detail li {
+            margin: 0.25rem 0;
+        }
+
+        .violation-detail code {
+            background: var(--gray-200);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-200);
+            text-align: center;
+            color: var(--gray-600);
+            font-size: 0.85rem;
+        }
+
+        .methodology {
+            background: var(--gray-50);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .methodology ol {
+            margin-left: 1.5rem;
+        }
+
+        .methodology li {
+            margin: 0.5rem 0;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .no-print {
+                display: none;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GDPR Cookie Compliance Report</h1>
+        <div class="subtitle">Automated Pre-Consent Tracking Analysis</div>
+        <div class="date">Generated: {{ScanDate}} {{ScanTime}} UTC</div>
+    </header>
+
+    <section id="summary">
+        <div class="summary-grid">
+            <div class="stat-card highlight">
+                <div class="value">{{TotalScanned}}</div>
+                <div class="label">Sites Analyzed</div>
+            </div>
+            <div class="stat-card success">
+                <div class="value">{{ComplianceRate}}%</div>
+                <div class="label">Compliance Rate</div>
+            </div>
+            <div class="stat-card {{ViolationCardClass}}">
+                <div class="value">{{WithViolations}}</div>
+                <div class="label">Sites with Violations</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">{{WithTrackers}}</div>
+                <div class="label">Pre-consent Trackers</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">{{WithCookies}}</div>
+                <div class="label">Pre-consent Cookies</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">{{Errors}}</div>
+                <div class="label">Scan Errors</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="violations">
+        <h2>Violation Analysis</h2>
+        {{ViolationsContent}}
+    </section>
+
+    <section id="trackers">
+        <h2>Tracker Analysis</h2>
+        
+        <h3>Most Common Pre-Consent Trackers</h3>
+        {{TrackersTable}}
+        
+        <h3>Most Common Pre-Consent Cookies</h3>
+        {{CookiesTable}}
+        
+        <h3>Most Common Third-Party Domains</h3>
+        {{ThirdPartyTable}}
+    </section>
+
+    <section id="compliant">
+        <h2>Compliant Sites</h2>
+        {{CompliantContent}}
+    </section>
+
+    {{ErrorsSection}}
+
+    <section id="methodology">
+        <h2>Methodology</h2>
+        <div class="methodology">
+            <p><strong>Scanning Process:</strong></p>
+            <ol>
+                <li><strong>Initial Load</strong> - Navigate to the site in a headless browser</li>
+                <li><strong>Pre-Consent Capture</strong> - Record all cookies and network requests before user interaction</li>
+                <li><strong>Consent Interaction</strong> - Click the consent banner (accept all)</li>
+                <li><strong>Post-Consent Navigation</strong> - Visit internal pages to trigger additional tracking</li>
+                <li><strong>Analysis</strong> - Compare states and flag violations</li>
+            </ol>
+            <p style="margin-top: 1rem;"><strong>What constitutes a violation:</strong> Under GDPR and ePrivacy Directive, websites must obtain consent <em>before</em> setting tracking cookies or contacting tracking services.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Report generated by <strong>Crumble</strong> - GDPR Cookie Compliance Scanner</p>
+        <p>Scan completed: {{ScanDate}} {{ScanTime}} UTC</p>
+    </footer>
+</body>
+</html>

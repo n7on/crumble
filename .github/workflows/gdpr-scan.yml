@@ -1,0 +1,128 @@
+name: GDPR Cookie Compliance Scan
+
+on:
+  schedule:
+    # Run weekly on Mondays at 6:00 UTC
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+    inputs:
+      site_limit:
+        description: 'Max number of sites to scan (0 = all)'
+        required: false
+        default: '0'
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Checkout wiki
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}.wiki
+          path: wiki
+          token: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+
+      - name: Create wiki directory if needed
+        run: mkdir -p wiki
+
+      - name: Setup PowerShell
+        shell: pwsh
+        run: |
+          Write-Host "PowerShell $($PSVersionTable.PSVersion)"
+
+      - name: Install Pup module
+        shell: pwsh
+        run: |
+          Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+          Install-Module -Name Pup -Scope CurrentUser -Force
+          Import-Module Pup
+
+      - name: Run GDPR scan and generate report
+        id: scan
+        shell: pwsh
+        env:
+          SITE_LIMIT: ${{ github.event.inputs.site_limit || '0' }}
+        run: |
+          Import-Module Pup
+          
+          $siteLimit = [int]$env:SITE_LIMIT
+          $sites = Get-Content -Path ./sites.json | ConvertFrom-Json
+          
+          if ($siteLimit -gt 0) {
+              $sites = $sites | Select-Object -First $siteLimit
+          }
+          
+          Write-Host "Scanning $($sites.Count) sites..."
+          
+          # Start browser
+          $browser = Start-PupBrowser -Headless
+          
+          $results = @()
+          foreach ($site in $sites) {
+              Write-Host "Scanning: $($site.Url)"
+              try {
+                  $result = & ./scripts/Test-GdprCompliance.ps1 -Url $site.Url -Browser $browser -ConsentSteps $site.ConsentSteps -Verbose
+                  $results += $result
+              } catch {
+                  Write-Warning "Failed to scan $($site.Url): $_"
+                  $results += [PSCustomObject]@{
+                      Url = $site.Url
+                      Error = $_.Exception.Message
+                      TestedAt = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'
+                  }
+              }
+          }
+          
+          # Save results JSON
+          $results | ConvertTo-Json -Depth 10 | Out-File -Path ./scan-results.json
+          
+          # Generate HTML report
+          $date = Get-Date -Format 'yyyy-MM-dd'
+          & ./scripts/New-CrumbleReport.ps1 -ResultsPath ./scan-results.json -OutputPath "./report.html"
+          
+          # Generate PDF report using Pup
+          & ./scripts/New-CrumbleReport.ps1 -ResultsPath ./scan-results.json -OutputPath "./GDPR-Compliance-Report-$date.pdf" -Browser $browser
+          
+          # Copy HTML to wiki
+          Copy-Item ./report.html ./wiki/GDPR-Compliance-Report.html
+          
+          # Stop browser
+          $browser | Stop-PupBrowser
+
+      - name: Upload reports artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: gdpr-compliance-report
+          path: |
+            scan-results.json
+            GDPR-Compliance-Report-*.pdf
+            report.html
+
+      - name: Publish to Wiki
+        run: |
+          cd wiki
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Initialize wiki repo if it doesn't exist
+          if [ ! -d ".git" ]; then
+            git init
+            git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.wiki.git
+          fi
+          
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to wiki"
+          else
+            git commit -m "Update GDPR scan report - $(date +'%Y-%m-%d')"
+            git push origin HEAD:master || git push origin HEAD:main
+          fi
+        continue-on-error: true
