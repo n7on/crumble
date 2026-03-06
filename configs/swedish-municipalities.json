@@ -3,235 +3,223 @@
   "Description": "Official websites of all 290 Swedish municipalities (kommuner)",
   "Sites": [
     {
-      "Url": "http://www.ale.se/",
+      "Url": "https://www.ale.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.alingsas.se/",
+      "Url": "https://www.alingsas.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.alvesta.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.alvesta.se/",
+      "Url": "https://www.aneby.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.aneby.se/",
+      "Url": "https://www.arboga.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.arboga.se/",
+      "Url": "https://www.arjeplog.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.arvidsjaur.se/",
+      "ConsentSteps": [
+        "Samtyck till alla kakor"
+      ]
+    },
+    {
+      "Url": "https://www.arvika.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.arjeplog.se/",
+      "Url": "https://www.askersund.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.arvidsjaur.se/",
+      "Url": "https://www.avesta.se/",
+      "ConsentSteps": [
+        "Tillåt alla cookies"
+      ]
+    },
+    {
+      "Url": "https://www.bengtsfors.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.arvika.se/",
+      "Url": "https://www.berg.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.askersund.se/",
+      "Url": "https://www.bjurholm.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.avesta.se/",
+      "Url": "https://www.bjuv.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.bengtsfors.se/",
+      "Url": "https://www.boden.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.bollebygd.se/",
+      "ConsentSteps": [
+        "Jag förstår"
+      ]
+    },
+    {
+      "Url": "https://www.bollnas.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.berg.se/",
+      "Url": "https://www.borgholm.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.borlange.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.bjurholm.se/",
+      "Url": "https://www.boras.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.bjuv.se/",
+      "Url": "https://www.botkyrka.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.boden.se/",
+      "Url": "https://www.boxholm.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.bollebygd.se/",
+      "Url": "https://www.bromolla.se/",
+      "ConsentSteps": [
+        "Tillåt alla"
+      ]
+    },
+    {
+      "Url": "https://www.bracke.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.burlov.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.bastad.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.bollnas.se/",
+      "Url": "https://www.dalsed.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.borgholm.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.borlange.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.boras.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.botkyrka.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.boxholm.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.bromolla.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.bracke.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.burlov.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.bastad.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.dalsed.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
+        "OK, jag fattar"
       ]
     },
     {
       "Url": "https://www.danderyd.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.degerfors.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.degerfors.se/",
+      "Url": "https://www.dorotea.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.eda.se/",
+      "ConsentSteps": [
+        "ACCEPTERA ALLA"
+      ]
+    },
+    {
+      "Url": "https://www.ekero.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.dorotea.se/",
+      "Url": "https://www.eksjo.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.eda.se/",
+      "Url": "https://www.emmaboda.se/",
+      "ConsentSteps": [
+        "GODKÄNN ALLA KAKOR"
+      ]
+    },
+    {
+      "Url": "https://enkoping.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.ekero.se/",
+      "Url": "https://www.eskilstuna.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.eslov.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Acceptera alla"
       ]
     },
     {
-      "Url": "http://www.eksjo.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
+      "Url": "https://www.essunga.se/",
+      "ConsentSteps": []
     },
     {
-      "Url": "http://www.emmaboda.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.enkoping.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.eskilstuna.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.eslov.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.essunga.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.fagersta.se/",
+      "Url": "https://www.fagersta.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
@@ -239,65 +227,63 @@
     {
       "Url": "https://kommun.falkenberg.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Jag förstår"
       ]
     },
     {
-      "Url": "http://www.falkoping.se/",
+      "Url": "https://www.falkoping.se/",
+      "ConsentSteps": [
+        "Ja, jag samtycker"
+      ]
+    },
+    {
+      "Url": "https://www.falun.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.falun.se/",
+      "Url": "https://www.filipstad.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.filipstad.se/",
+      "Url": "https://www.finspang.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.finspang.se/",
+      "Url": "https://www.flen.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.flen.se/",
+      "Url": "https://www.forshaga.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.forshaga.se/",
+      "Url": "https://www.fargelanda.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.gagnef.se/",
+      "ConsentSteps": [
+        "Acceptera cookies"
+      ]
+    },
+    {
+      "Url": "https://www.gislaved.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.fargelanda.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.gagnef.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.gislaved.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.gnesta.se/",
+      "Url": "https://www.gnesta.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
@@ -309,27 +295,25 @@
       ]
     },
     {
-      "Url": "http://www.gotland.se/",
+      "Url": "https://www.gotland.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.grums.se/",
+      "Url": "https://www.grums.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.grastorp.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
+      "Url": "https://www.grastorp.se/",
+      "ConsentSteps": []
     },
     {
-      "Url": "http://www.gullspang.se/",
+      "Url": "https://www.gullspang.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Acceptera alla kakor"
       ]
     },
     {
@@ -341,86 +325,76 @@
     {
       "Url": "https://www.gavle.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Tillåt alla kakor"
       ]
     },
     {
-      "Url": "http://www.goteborg.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
+      "Url": "https://www.goteborg.se/",
+      "ConsentSteps": []
     },
     {
       "Url": "https://www.gotene.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.habokommun.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.hagfors.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.hallsberg.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.habokommun.se/",
+      "Url": "https://www.hallstahammar.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.hagfors.se/",
+      "Url": "https://www.halmstad.se/",
+      "ConsentSteps": [
+        "Samtyck till alla kakor"
+      ]
+    },
+    {
+      "Url": "https://www.hammaro.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.hallsberg.se/",
+      "Url": "https://www.haninge.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.hallstahammar.se/",
+      "Url": "https://www.haparanda.se/",
+      "ConsentSteps": [
+        "Godkänn nödvändiga kakor"
+      ]
+    },
+    {
+      "Url": "https://www.heby.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.halmstad.se/",
+      "Url": "https://www.hedemora.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Acceptera"
       ]
     },
     {
-      "Url": "http://www.hammaro.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.haninge.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.haparanda.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.heby.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.hedemora.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.helsingborg.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
+      "Url": "https://www.helsingborg.se/",
+      "ConsentSteps": []
     },
     {
       "Url": "https://www.herrljunga.se/",
@@ -429,55 +403,53 @@
       ]
     },
     {
-      "Url": "http://www.hjo.se/",
+      "Url": "https://www.hjo.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.hofors.se/",
+      "Url": "https://www.hofors.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.huddinge.se/",
+      "Url": "https://www.huddinge.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.hudiksvall.se/",
+      "Url": "https://www.hudiksvall.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.hultsfred.se/",
+      "Url": "https://www.hultsfred.se/",
+      "ConsentSteps": [
+        "Godkänn"
+      ]
+    },
+    {
+      "Url": "https://www.hylte.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.hylte.se/",
+      "Url": "https://www.habo.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.hellefors.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.habo.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.hellefors.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.herjedalen.se/",
+      "Url": "https://www.herjedalen.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
@@ -489,81 +461,81 @@
       ]
     },
     {
-      "Url": "http://www.harryda.se/",
+      "Url": "https://www.harryda.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.hassleholm.se/",
+      "Url": "https://www.hassleholm.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.hoganas.se/",
+      "Url": "https://www.hoganas.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.hogsby.se/",
+      "Url": "https://www.hogsby.se/",
+      "ConsentSteps": [
+        "Okej, jag förstår"
+      ]
+    },
+    {
+      "Url": "https://www.horby.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.hoor.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.jokkmokk.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.jarfalla.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.horby.se/",
+      "Url": "https://www.jonkoping.se/",
+      "ConsentSteps": [
+        "Acceptera"
+      ]
+    },
+    {
+      "Url": "https://www.kalix.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.kalmar.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.hoor.se/",
+      "Url": "https://www.karlsborg.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.jokkmokk.se/",
+      "Url": "https://www.karlshamn.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.jarfalla.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.jonkoping.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.kalix.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.kalmar.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.karlsborg.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.karlshamn.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Tillåt alla"
       ]
     },
     {
@@ -573,187 +545,181 @@
       ]
     },
     {
-      "Url": "http://www.karlskrona.se/",
+      "Url": "https://www.karlskrona.se/",
+      "ConsentSteps": [
+        "Acceptera alla cookies"
+      ]
+    },
+    {
+      "Url": "https://www.karlstad.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.karlstad.se/",
+      "Url": "https://www.katrineholm.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.katrineholm.se/",
+      "Url": "https://www.kil.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.kil.se/",
+      "Url": "https://www.kinda.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.kinda.se/",
+      "Url": "https://kiruna.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://kiruna.se/",
+      "Url": "https://www.klippan.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.klippan.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
+      "Url": "https://www.knivsta.se/",
+      "ConsentSteps": []
     },
     {
-      "Url": "http://www.knivsta.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.kramfors.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
+      "Url": "https://www.kramfors.se/",
+      "ConsentSteps": []
     },
     {
       "Url": "https://www.kristianstad.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Tillåt alla"
       ]
     },
     {
-      "Url": "http://www.kristinehamn.se/",
+      "Url": "https://www.kristinehamn.se/",
+      "ConsentSteps": [
+        "ACCEPTERA ALLA"
+      ]
+    },
+    {
+      "Url": "https://www.krokom.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.krokom.se/",
+      "Url": "https://www.kumla.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.kumla.se/",
+      "Url": "https://www.kungsbacka.se/",
+      "ConsentSteps": [
+        "Samtyck till alla kakor"
+      ]
+    },
+    {
+      "Url": "https://www.kungsor.se/",
+      "ConsentSteps": [
+        "Jag accepterar cookies"
+      ]
+    },
+    {
+      "Url": "https://www.kungalv.se/",
+      "ConsentSteps": [
+        "GODKÄNN ALLA"
+      ]
+    },
+    {
+      "Url": "https://www.kavlinge.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.kungsbacka.se/",
+      "Url": "https://www.koping.se/",
+      "ConsentSteps": [
+        "Jag accepterar cookies"
+      ]
+    },
+    {
+      "Url": "https://www.laholm.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.kungsor.se/",
+      "Url": "https://www.landskrona.se/",
+      "ConsentSteps": [
+        "Tillåt"
+      ]
+    },
+    {
+      "Url": "https://www.laxa.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.kungalv.se/",
+      "Url": "https://www.lekeberg.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.kavlinge.se/",
+      "Url": "https://www.leksand.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.koping.se/",
+      "Url": "https://www.lerum.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.laholm.se/",
+      "Url": "https://www.lessebo.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.landskrona.se/",
+      "Url": "https://www.lidingo.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.laxa.se/",
+      "Url": "https://www.lidkoping.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.lillaedet.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.lekeberg.se/",
+      "Url": "https://www.lindesberg.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.leksand.se/",
+      "Url": "https://www.linkoping.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Godkänn alla"
       ]
     },
     {
-      "Url": "http://www.lerum.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.lessebo.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.lidingo.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.lidkoping.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.lillaedet.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.lindesberg.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.linkoping.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.ljungby.se/",
+      "Url": "https://www.ljungby.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
@@ -761,53 +727,51 @@
     {
       "Url": "https://www.ljusdal.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Godkänn nödvändiga kakor"
       ]
     },
     {
-      "Url": "http://www.ljusnarsberg.se/",
+      "Url": "https://www.ljusnarsberg.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.lomma.se/",
+      "Url": "https://www.lomma.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.ludvika.se/",
+      "Url": "https://www.ludvika.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.lulea.se/",
+      "Url": "https://www.lulea.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.lund.se/",
+      "Url": "https://www.lund.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.lycksele.se/",
+      "Url": "https://www.lycksele.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.lysekil.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.lysekil.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.malmo.se/",
+      "Url": "https://www.malmo.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
@@ -819,34 +783,32 @@
       ]
     },
     {
-      "Url": "http://www.mala.se/",
+      "Url": "https://www.mala.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.mariestad.se/",
+      "ConsentSteps": [
+        "Acceptera alla kakor"
+      ]
+    },
+    {
+      "Url": "https://www.mark.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.mariestad.se/",
+      "Url": "https://www.markaryd.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.mark.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.markaryd.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.mellerud.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
+      "Url": "https://www.mellerud.se/",
+      "ConsentSteps": []
     },
     {
       "Url": "https://www.mjolby.se/",
@@ -857,83 +819,79 @@
     {
       "Url": "https://morakommun.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Godkänn nödvändiga kakor"
       ]
     },
     {
-      "Url": "http://www.motala.se/",
+      "Url": "https://www.motala.se/",
+      "ConsentSteps": [
+        "GODKÄNN ALLA"
+      ]
+    },
+    {
+      "Url": "https://www.mullsjo.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.mullsjo.se/",
+      "Url": "https://www.munkedal.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.munkedal.se/",
+      "Url": "https://www.munkfors.se/",
+      "ConsentSteps": [
+        "ACCEPTERA ALLA"
+      ]
+    },
+    {
+      "Url": "https://www.molndal.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.munkfors.se/",
+      "Url": "https://www.monsteras.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.molndal.se/",
+      "Url": "https://www.morbylanga.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Tillåt alla"
       ]
     },
     {
-      "Url": "http://www.monsteras.se/",
+      "Url": "https://www.nacka.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Godkänn alla"
       ]
     },
     {
-      "Url": "http://www.morbylanga.se/",
+      "Url": "https://www.nora.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.norberg.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "JAG ACCEPTERAR"
       ]
     },
     {
-      "Url": "http://www.nacka.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.nora.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.norberg.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.nordanstig.se/",
+      "Url": "https://www.nordanstig.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
       "Url": "https://www.nordmaling.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
+      "ConsentSteps": []
     },
     {
-      "Url": "http://www.norrkoping.se/",
+      "Url": "https://www.norrkoping.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
@@ -941,41 +899,35 @@
     {
       "Url": "https://www.norrtalje.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "GODKÄNN ALLA"
       ]
     },
     {
-      "Url": "http://www.norsjo.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
+      "Url": "https://www.norsjo.se/",
+      "ConsentSteps": []
     },
     {
-      "Url": "http://www.nybro.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
+      "Url": "https://www.nybro.se/",
+      "ConsentSteps": []
     },
     {
-      "Url": "http://www.nykvarn.se/",
+      "Url": "https://www.nykvarn.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
       "Url": "https://www.nykoping.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.nynashamn.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.nynashamn.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.nassjo.se/",
+      "Url": "https://www.nassjo.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
@@ -987,25 +939,25 @@
       ]
     },
     {
-      "Url": "http://www.olofstrom.se/",
+      "Url": "https://www.olofstrom.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.orsa.se/",
+      "Url": "https://www.orsa.se/",
+      "ConsentSteps": [
+        "Godkänn nödvändiga kakor"
+      ]
+    },
+    {
+      "Url": "https://www.orust.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.orust.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.osby.se/",
+      "Url": "https://www.osby.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
@@ -1013,137 +965,135 @@
     {
       "Url": "https://www.oskarshamn.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Ja, jag samtycker"
       ]
     },
     {
-      "Url": "http://www.ovanaker.se/",
+      "Url": "https://www.ovanaker.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.oxelosund.se/",
+      "Url": "https://www.oxelosund.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.pajala.se/",
+      "Url": "https://www.pajala.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.partille.se/",
+      "ConsentSteps": [
+        "Godkänn alla cookies"
+      ]
+    },
+    {
+      "Url": "https://www.perstorp.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.partille.se/",
+      "Url": "https://www.pitea.se/",
+      "ConsentSteps": [
+        "Tillåt alla cookies"
+      ]
+    },
+    {
+      "Url": "https://www.ragunda.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.perstorp.se/",
+      "Url": "https://www.robertsfors.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.pitea.se/",
+      "Url": "https://www.ronneby.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.ragunda.se/",
+      "Url": "https://www.rattvik.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.robertsfors.se/",
+      "Url": "https://www.sala.se/",
+      "ConsentSteps": [
+        "Godkänn"
+      ]
+    },
+    {
+      "Url": "https://www.salem.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.ronneby.se/",
+      "Url": "https://www.sandviken.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.rattvik.se/",
+      "Url": "https://www.sigtuna.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.sala.se/",
+      "Url": "https://www.simrishamn.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.salem.se/",
+      "Url": "https://www.sjobo.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.sandviken.se/",
+      "Url": "https://www.skara.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.sigtuna.se/",
+      "Url": "https://www.skelleftea.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.simrishamn.se/",
+      "Url": "https://www.skinnskatteberg.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.skurup.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.sjobo.se/",
+      "Url": "https://www.skovde.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Tillåt alla"
       ]
     },
     {
-      "Url": "http://www.skara.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.skelleftea.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.skinnskatteberg.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.skurup.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.skovde.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.smedjebacken.se/",
+      "Url": "https://www.smedjebacken.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
@@ -1155,79 +1105,73 @@
       ]
     },
     {
-      "Url": "http://www.sollentuna.se/",
+      "Url": "https://www.sollentuna.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.solna.se/",
+      "Url": "https://www.solna.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.sorsele.se/",
+      "Url": "https://www.sorsele.se/",
+      "ConsentSteps": [
+        "Acceptera alla cookies"
+      ]
+    },
+    {
+      "Url": "https://www.sotenas.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.sotenas.se/",
+      "Url": "https://www.staffanstorp.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.stenungsund.se/",
+      "ConsentSteps": [
+        "Tillåt alla cookies"
+      ]
+    },
+    {
+      "Url": "https://www.stockholm.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.staffanstorp.se/",
+      "Url": "https://www.storfors.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.storuman.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.strangnas.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.stenungsund.se/",
+      "Url": "https://www.stromstad.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.stockholm.se/",
+      "Url": "https://www.stromsund.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.storfors.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.storuman.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.strangnas.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.stromstad.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.stromsund.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.sundbyberg.se/",
+      "Url": "https://www.sundbyberg.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
@@ -1239,27 +1183,25 @@
       ]
     },
     {
-      "Url": "http://www.sunne.se/",
+      "Url": "https://www.sunne.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.surahammar.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.surahammar.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
+      "Url": "https://www.svalov.se/",
+      "ConsentSteps": []
     },
     {
-      "Url": "http://www.svalov.se/",
+      "Url": "https://www.svedala.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.svedala.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
+        "GODKÄNN ALLA"
       ]
     },
     {
@@ -1269,97 +1211,87 @@
       ]
     },
     {
-      "Url": "http://www.saffle.se/",
+      "Url": "https://www.saffle.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.sater.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.savsjo.se/",
+      "ConsentSteps": [
+        "Acceptera"
+      ]
+    },
+    {
+      "Url": "https://www.soderhamn.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.sater.se/",
+      "Url": "https://www.soderkoping.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.sodertalje.se/",
+      "ConsentSteps": [
+        "Tillåt alla"
+      ]
+    },
+    {
+      "Url": "https://www.solvesborg.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.tanum.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.tibro.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.savsjo.se/",
+      "Url": "https://www.tidaholm.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.soderhamn.se/",
+      "Url": "https://www.tierp.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.timra.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.soderkoping.se/",
+      "Url": "https://www.tingsryd.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.tjorn.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.sodertalje.se/",
+      "Url": "https://www.tomelilla.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.solvesborg.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.tanum.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.tibro.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.tidaholm.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.tierp.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.timra.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.tingsryd.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.tjorn.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.tomelilla.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.torsby.se/",
+      "Url": "https://www.torsby.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
@@ -1367,83 +1299,81 @@
     {
       "Url": "https://www.torsas.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Godkänn"
       ]
     },
     {
-      "Url": "http://www.tranemo.se/",
+      "Url": "https://www.tranemo.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.tranas.se/",
+      "Url": "https://www.tranas.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.trelleborg.se/",
+      "Url": "https://www.trelleborg.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.trollhattan.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.trosa.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.tyreso.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.trollhattan.se/",
+      "Url": "https://www.taby.se/",
+      "ConsentSteps": [
+        "GODKÄNN ALLA KAKOR"
+      ]
+    },
+    {
+      "Url": "https://www.toreboda.se/",
+      "ConsentSteps": [
+        "Acceptera alla kakor"
+      ]
+    },
+    {
+      "Url": "https://www.uddevalla.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.trosa.se/",
+      "Url": "https://www.ulricehamn.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.tyreso.se/",
+      "Url": "https://www.umea.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.taby.se/",
+      "Url": "https://www.upplands-bro.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.toreboda.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.uddevalla.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.ulricehamn.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.umea.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.upplands-bro.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.upplandsvasby.se/",
+      "Url": "https://www.upplandsvasby.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
@@ -1451,32 +1381,28 @@
     {
       "Url": "https://www.uppsala.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Tillåt alla kakor"
       ]
     },
     {
-      "Url": "http://www.uppvidinge.se/",
+      "Url": "https://www.uppvidinge.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.vadstena.se/",
+      "Url": "https://www.vadstena.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.vaggeryd.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.vaggeryd.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.valdemarsvik.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
+      "Url": "https://www.valdemarsvik.se/",
+      "ConsentSteps": []
     },
     {
       "Url": "https://www.vallentuna.se/",
@@ -1485,133 +1411,123 @@
       ]
     },
     {
-      "Url": "http://www.vansbro.se/",
+      "Url": "https://www.vansbro.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.vara.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.vara.se/",
+      "Url": "https://www.varberg.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.varberg.se/",
+      "Url": "https://www.vaxholm.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.vaxholm.se/",
+      "Url": "https://www.vellinge.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.vetlanda.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.vellinge.se/",
+      "Url": "https://www.vilhelmina.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.vimmerby.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.vetlanda.se/",
+      "Url": "https://www.vindeln.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.vingaker.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.vilhelmina.se/",
+      "Url": "https://www.vargarda.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.vimmerby.se/",
+      "Url": "https://www.vanersborg.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.vindeln.se/",
+      "Url": "https://www.vannas.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.varmdo.se/",
+      "ConsentSteps": [
+        "Samtyck till alla kakor"
+      ]
+    },
+    {
+      "Url": "https://www.varnamo.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.vingaker.se/",
+      "Url": "https://www.vastervik.se/",
+      "ConsentSteps": [
+        "Ja, jag godkänner statistikkakor"
+      ]
+    },
+    {
+      "Url": "https://www.vasteras.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.vargarda.se/",
+      "Url": "https://www.vaxjo.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.vanersborg.se/",
+      "Url": "https://www.ydre.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.ystad.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.vannas.se/",
+      "Url": "https://www.amal.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.varmdo.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.varnamo.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.vastervik.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.vasteras.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.vaxjo.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.ydre.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.ystad.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.amal.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.ange.se/",
+      "Url": "https://www.ange.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
@@ -1623,124 +1539,108 @@
       ]
     },
     {
-      "Url": "http://www.arjang.se/",
+      "Url": "https://www.arjang.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.asele.se/",
+      "ConsentSteps": [
+        "Acceptera alla"
+      ]
+    },
+    {
+      "Url": "https://www.astorp.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.asele.se/",
+      "Url": "https://www.atvidaberg.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.astorp.se/",
+      "Url": "https://www.almhult.se/",
+      "ConsentSteps": [
+        "Samtyck till alla kakor"
+      ]
+    },
+    {
+      "Url": "https://www.alvdalen.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.alvkarleby.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.alvsbyn.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.engelholm.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.atvidaberg.se/",
+      "Url": "https://www.ockero.se/",
+      "ConsentSteps": [
+        "Godkänner nödvändiga kakor"
+      ]
+    },
+    {
+      "Url": "https://www.odeshog.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.almhult.se/",
+      "Url": "https://www.orebro.se/",
+      "ConsentSteps": [
+        "GODKÄNN ALLA KAKOR"
+      ]
+    },
+    {
+      "Url": "https://www.orkelljunga.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.ornskoldsvik.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.alvdalen.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.alvkarleby.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.alvsbyn.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.engelholm.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.ockero.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.odeshog.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.orebro.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.orkelljunga.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.ornskoldsvik.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.ostersund.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
+      "Url": "https://www.ostersund.se/",
+      "ConsentSteps": []
     },
     {
       "Url": "https://www.osteraker.se/",
+      "ConsentSteps": []
+    },
+    {
+      "Url": "https://www.osthammar.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.osthammar.se/",
+      "Url": "https://www.ostragoinge.se/",
       "ConsentSteps": [
         "Godkänn alla kakor"
       ]
     },
     {
-      "Url": "http://www.ostragoinge.se/",
+      "Url": "https://www.overkalix.se/",
       "ConsentSteps": [
-        "Godkänn alla kakor"
+        "Acceptera alla"
       ]
     },
     {
-      "Url": "http://www.overkalix.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
-    },
-    {
-      "Url": "http://www.overtornea.se/",
-      "ConsentSteps": [
-        "Godkänn alla kakor"
-      ]
+      "Url": "https://www.overtornea.se/",
+      "ConsentSteps": []
     }
   ]
 }

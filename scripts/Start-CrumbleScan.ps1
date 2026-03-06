@@ -18,6 +18,9 @@
 .PARAMETER Limit
     Maximum number of sites to scan (0 = all).
 
+.PARAMETER NoHeadless
+    Run browser in visible mode instead of headless. Some sites don't fully load in headless mode.
+
 .EXAMPLE
     ./Start-CrumbleScan.ps1 -ScanPath ./configs/swedish-municipalities.json
 
@@ -35,7 +38,10 @@ param(
     [switch]$Pdf,
     
     [Parameter(Mandatory = $false)]
-    [int]$Limit = 0
+    [int]$Limit = 0,
+    
+    [Parameter(Mandatory = $false)]
+    [switch]$NoHeadless
 )
 
 $ErrorActionPreference = 'Stop'
@@ -54,7 +60,11 @@ Write-Host "Scanning '$($scan.Name)': $($sites.Count) sites..."
 
 # Start browser
 Import-Module Pup
-$browser = Start-PupBrowser -Headless
+if ($NoHeadless) {
+    $browser = Start-PupBrowser
+} else {
+    $browser = Start-PupBrowser -Headless
+}
 
 try {
     # Run scans

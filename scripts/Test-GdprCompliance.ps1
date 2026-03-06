@@ -95,6 +95,7 @@ Write-Verbose "Testing $Url with consent steps: $($ConsentSteps -join ', ')"
 $Page = $Browser | New-PupPage -Url $Url -WaitForLoad
 $Domain = [Uri]$Page.Url
 $SiteDomain = $Domain.Host
+$Origin = $Domain.Scheme + "://" + $Domain.Host
 
 # Before consent
 $Cookies = @{Before = ($Page | Get-PupCookie); After = $null}
@@ -103,22 +104,24 @@ $Network = @{Before = ($Page | Get-PupNetwork); After = $null}
 # Detect and click consent banner
 foreach ($ConsentStep in $ConsentSteps) {
     Write-Verbose "Clicking consent step: $ConsentStep"
-    $ElementSteps = $Page | Find-PupElements -Text $ConsentStep -Visible
+    $ElementSteps = $Page | Find-PupElements -Text $ConsentStep -WaitForLoad
     if ($ElementSteps.Count -eq 0) {
         Write-Warning "Consent step '$ConsentStep' not found on the page!"
     } elseif($ElementSteps.Count -gt 1) {
         Write-Warning "Multiple elements found for consent step '$ConsentStep'. Clicking the first one."
         $ElementSteps[0] | Invoke-PupElementClick
     } else {
+        Write-Verbose "Found consent element for '$ConsentStep'. Clicking it."
         $ElementSteps | Invoke-PupElementClick
     }
 }
-
+Start-Sleep -Milliseconds 500
 # Click around a bit to trigger more network requests and cookies
-$Links = $Page | Find-PupElements -Selector 'a[href^="/"]' `
-    | Get-PupElementAttribute -Name 'href' `
-    | ForEach-Object { $Domain.Scheme + "://" + $Domain.Host + $_ } `
-    | Select-Object -First 3 
+$Links = $Page | Find-PupElements -Selector "a[href^='/'], a[href^='$Origin']" -WaitForLoad `
+    | Get-PupElementAttribute -Name 'href' `                                  
+    | ForEach-Object {                                                        
+        if ($_ -match '^https?://') { $_ } else { $Origin + $_ }              
+    } | Select-Object -Unique | Select-Object -First 3
 
 $Links | ForEach-Object { $Page = $Page | Move-PupPage -Url $_ -WaitForLoad }
 
